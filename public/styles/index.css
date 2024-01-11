@@ -30,3 +30,29 @@ body {
     list-style: none;
     margin: 1em auto;
 }
+.createtodos {
+    grid-column: span 10;
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createtodos form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createtodos input {
+    padding: .4em;
+}
+.createtodos input[type="submit"] {
+    margin-left: .1em;
+    background: green;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    width: 100px;
+    border: .2em solid green;
+}
