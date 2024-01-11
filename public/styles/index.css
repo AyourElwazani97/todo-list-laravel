@@ -94,13 +94,19 @@ table {
 .theader {
     background-color: #dad5d5;
 }
-.editbtn button,.deletebtn button {
+.editbtn button,.deletebtn input {
     background: green;
     border-radius: 20px;
     border: none;
     cursor: pointer;
     color: #fff;
 }
-.deletebtn button {
+.deletebtn input {
     background: red;
+}
+#done {
+    color: green;
+}
+#inprogress {
+    color: orange;
 }

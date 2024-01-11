@@ -17,9 +17,13 @@
                     <td>{{ $item['todo'] }}</td>
                     <td>
                         @if ($item['status'])
-                            true
+                            <span id="done">
+                                done
+                            </span>
                         @else
-                            false
+                            <span id="inprogress">
+                                in progress
+                            </span>
                         @endif
                     </td>
                     <td>{{ $item['created_at'] }}</td>
@@ -29,7 +33,13 @@
                             <button>edit</button>
                         </a>
                     </td>
-                    <td class="deletebtn"><button>delete</button></td>
+                    <td class="deletebtn">
+                        <form action="{{ route('todos.destroy', $item['id']) }}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <input type="submit" value="delete">
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </table>
@@ -44,7 +54,6 @@
         @enderror
         <form action="{{ route('todos.store') }}" method="POST">
             @csrf
-
             <div>
                 <input type="text" name="todo" id="todo">
             </div>

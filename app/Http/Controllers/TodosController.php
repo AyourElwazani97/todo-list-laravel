@@ -68,6 +68,16 @@ class TodosController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $request->validate([
+            'todo' => "required",
+        ]);
+        $table = Todos::findOrfail($id);
+        $table->todo = strip_tags($request->input('todo'));
+        $table->status = strip_tags($request->input('status'));
+
+        $table->save();
+        return redirect()->route('todos.index');
+        // dd($request);
     }
 
     /**
@@ -76,5 +86,8 @@ class TodosController extends Controller
     public function destroy(string $id)
     {
         //
+        $todo = Todos::findOrfail($id);
+        $todo->delete();
+        return redirect()->route('todos.index');
     }
 }
