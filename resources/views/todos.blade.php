@@ -2,7 +2,7 @@
 @section('content')
     <div class="lists">
         <table>
-            <tr>
+            <tr class="theader">
                 <th>N°</th>
                 <th>Todo</th>
                 <th>Status</th>
@@ -24,8 +24,8 @@
                     </td>
                     <td>{{ $item['created_at'] }}</td>
                     <td>{{ $item['updated_at'] }}</td>
-                    <td><button>E</button></td>
-                    <td><button>D</button></td>
+                    <td class="editbtn"><button>edit</button></td>
+                    <td class="deletebtn"><button>delete</button></td>
                 </tr>
             @endforeach
         </table>

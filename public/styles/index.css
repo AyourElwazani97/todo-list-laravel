@@ -89,4 +89,18 @@ table {
     margin-top: 2em;
     border: .1em red solid;
     border-collapse: collapse;
+    width: 80%;
+}
+.theader {
+    background-color: #dad5d5;
+}
+.editbtn button,.deletebtn button {
+    background: green;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+.deletebtn button {
+    background: red;
 }
