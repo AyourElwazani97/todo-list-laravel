@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif !important;
 }
 
 .container {
@@ -19,9 +22,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .lists ul {
     padding: 0;
 }
+
 .lists li {
     border: .1em solid #000;
     min-width: 200px;
@@ -30,6 +35,7 @@ body {
     list-style: none;
     margin: 1em auto;
 }
+
 .createtodos {
     grid-column: span 10;
     grid-row-start: 1;
@@ -38,14 +44,17 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 .createtodos form {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .createtodos input {
     padding: .4em;
 }
+
 .createtodos input[type="submit"] {
     margin-left: .1em;
     background: green;
@@ -57,7 +66,27 @@ body {
     width: 100px;
     border: .2em solid green;
 }
+
 .form-error {
     color: red;
     font-weight: bold;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    text-align: center;
+    padding: .5em;
+
+}
+
+table {
+    margin-top: 2em;
+    border: .1em red solid;
+    border-collapse: collapse;
 }

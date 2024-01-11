@@ -1,14 +1,34 @@
 @extends('Layouts.index')
 @section('content')
     <div class="lists">
-        <ul>
-            <li>done</li>
-            <li>done</li>
-            <li>done</li>
-            <li>done</li>
-            <li>done</li>
-            <li>done</li>
-        </ul>
+        <table>
+            <tr>
+                <th>N°</th>
+                <th>Todo</th>
+                <th>Status</th>
+                <th>Created_at</th>
+                <th>Modified</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach ($data as $item)
+                <tr>
+                    <td>{{ $item['id'] }}</td>
+                    <td>{{ $item['todo'] }}</td>
+                    <td>
+                        @if ($item['status'])
+                            true
+                        @else
+                            false
+                        @endif
+                    </td>
+                    <td>{{ $item['created_at'] }}</td>
+                    <td>{{ $item['updated_at'] }}</td>
+                    <td><button>E</button></td>
+                    <td><button>D</button></td>
+                </tr>
+            @endforeach
+        </table>
     </div>
     <div class="createtodos">
         @error('todo')
