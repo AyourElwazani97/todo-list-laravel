@@ -4,3 +4,29 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    place-content: center;
+    min-height: 100vh;
+}
+
+.lists {
+    grid-column: span 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lists ul {
+    padding: 0;
+}
+.lists li {
+    border: .1em solid #000;
+    min-width: 200px;
+    border-radius: 20px;
+    text-align: center;
+    list-style: none;
+    margin: 1em auto;
+}
