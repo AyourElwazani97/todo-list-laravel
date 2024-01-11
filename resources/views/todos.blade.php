@@ -11,14 +11,24 @@
         </ul>
     </div>
     <div class="createtodos">
-        <form action="" method="">
+        @error('todo')
+            <div class="form-error">
+                <span>
+                    {{ $message }}
+                </span>
+            </div>
+        @enderror
+        <form action="{{ route('todos.store') }}" method="POST">
             @csrf
+
             <div>
                 <input type="text" name="todo" id="todo">
             </div>
+            <br />
             <div>
                 <input type="submit" value="Add Task">
             </div>
         </form>
+
     </div>
 @endsection
