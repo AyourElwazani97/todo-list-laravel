@@ -14,7 +14,7 @@ class TodosController extends Controller
     {
         //
         $data = Todos::all();
-        return view("todos", ["data" => $data]);
+        return view("todos.index", ["data" => $data]);
     }
 
     /**
@@ -23,7 +23,7 @@ class TodosController extends Controller
     public function create()
     {
         //
-        return view("todos");
+        return view("todos.index");
     }
 
     /**
@@ -48,6 +48,8 @@ class TodosController extends Controller
     public function show(string $id)
     {
         //
+        $data = Todos::findOrfail($id);
+        return view('todos.show', ["data" => $data]);
     }
 
     /**
@@ -56,6 +58,8 @@ class TodosController extends Controller
     public function edit(string $id)
     {
         //
+        $data = Todos::findOrfail($id);
+        return view('todos.edit', ["data" => $data]);
     }
 
     /**

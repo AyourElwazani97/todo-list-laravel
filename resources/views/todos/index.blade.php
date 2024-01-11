@@ -24,7 +24,11 @@
                     </td>
                     <td>{{ $item['created_at'] }}</td>
                     <td>{{ $item['updated_at'] }}</td>
-                    <td class="editbtn"><button>edit</button></td>
+                    <td class="editbtn">
+                        <a href="{{ route('todos.edit', $item['id']) }}">
+                            <button>edit</button>
+                        </a>
+                    </td>
                     <td class="deletebtn"><button>delete</button></td>
                 </tr>
             @endforeach
